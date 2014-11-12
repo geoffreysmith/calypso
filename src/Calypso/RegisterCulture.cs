@@ -45,6 +45,9 @@ namespace Calypso
             string existingRegionIsoCode,
             string newRegionIsoCode)
         {
+            if (CustomCultureExists(cultureName))
+                return;
+
             CultureAndRegionModifiers cultureAndRegion;
 
             Enum.TryParse(cultureAndRegionModifier, true, out cultureAndRegion);
